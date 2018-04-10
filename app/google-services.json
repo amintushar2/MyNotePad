@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "974619462175",
+    "firebase_url": "https://my-notepad-7e8d2.firebaseio.com",
+    "project_id": "my-notepad-7e8d2",
+    "storage_bucket": "my-notepad-7e8d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974619462175:android:77f783fd1738df95",
+        "android_client_info": {
+          "package_name": "com.notepad.amintushar.mynotepad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974619462175-91t52tgs8ksq9u2r3c10n8oru5cbvv48.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.notepad.amintushar.mynotepad",
+            "certificate_hash": "fa40cc9205616dd47872dc570752e626f6a10057"
+          }
+        },
+        {
+          "client_id": "974619462175-icac3gk7b9ogj5m3tb22kfemggccvhab.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrUdTiLZ_L_nTbJ6SZt3BElmRYsBS7K68"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974619462175-icac3gk7b9ogj5m3tb22kfemggccvhab.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
