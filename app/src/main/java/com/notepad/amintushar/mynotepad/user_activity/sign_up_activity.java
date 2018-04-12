@@ -1,7 +1,6 @@
 package com.notepad.amintushar.mynotepad.user_activity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +14,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.notepad.amintushar.mynotepad.R;
 
 public class sign_up_activity extends AppCompatActivity {
@@ -24,6 +25,9 @@ public class sign_up_activity extends AppCompatActivity {
     TextView logpage;
     EditText personame, email, password, confirmpassword;
     static final String MY_PREF = "new pref";
+    String personname ;
+    String emailid ;
+    String password1;
 
     FirebaseAuth myAppAuth;
 
@@ -64,13 +68,13 @@ public class sign_up_activity extends AppCompatActivity {
 //                    Toast.makeText(Sign_up.this, "Success Fully Register", Toast.LENGTH_SHORT).show();
 //                Intent intent = new Intent(Sign_up.this, Login_activity.class);
 //                startActivity(intent);
-                    SharedPreferences pref = getSharedPreferences(MY_PREF, 0);
-                    SharedPreferences.Editor editor = pref.edit();
-                    String Email = email.getText().toString();
-                    editor.putString("name", Email);
-                    String Pass = password.getText().toString();
-                    editor.putString("pass", Pass);
-                    editor.commit();
+//                    SharedPreferences pref = getSharedPreferences(MY_PREF, 0);
+//                    SharedPreferences.Editor editor = pref.edit();
+//                    String Email = email.getText().toString();
+//                    editor.putString("name", Email);
+//                    String Pass = password.getText().toString();
+//                    editor.putString("pass", Pass);
+//                    editor.commit();
 
 
                 } else if (bol == true) {
@@ -82,14 +86,24 @@ public class sign_up_activity extends AppCompatActivity {
 
         });
     }
-
+    private void sendUserData(){
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = firebaseDatabase.getReference(myAppAuth.getUid());
+        UserProfile userProfile = new UserProfile(emailid,personname);
+        myRef.setValue(userProfile);
+    }
     private void registerUser(String emailid, String password1) {
 
         myAppAuth.createUserWithEmailAndPassword(emailid, password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+                  sendUserData();
+
+
                     Toast.makeText(getApplicationContext(), "RegistrationSuccesFull", Toast.LENGTH_SHORT).show();
+                    myAppAuth.signOut();
+                    finish();
                     Intent intent = new Intent(sign_up_activity.this, log_in_activity.class);
                     startActivity(intent);
                 } else {
@@ -101,9 +115,9 @@ public class sign_up_activity extends AppCompatActivity {
 
 
     Boolean checkValidation() {
-        String personname = personame.getText().toString();
-        String emailid = email.getText().toString();
-        String password1 = password.getText().toString();
+        personname = personame.getText().toString();
+        emailid = email.getText().toString();
+        password1 = password.getText().toString();
         String comPass = confirmpassword.getText().toString();
 
         Boolean flag = false;
@@ -129,4 +143,6 @@ public class sign_up_activity extends AppCompatActivity {
         }
         return flag;
     }
+
+
 }

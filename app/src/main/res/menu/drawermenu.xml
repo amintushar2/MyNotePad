@@ -14,7 +14,7 @@
         android:title="Activity"
         android:icon="@drawable/ic_activity"
         />
-<item android:id="@+id/logout"
+<item android:id="@+id/logoutm"
         android:title="logout"
         android:icon="@drawable/ic_log"
         />

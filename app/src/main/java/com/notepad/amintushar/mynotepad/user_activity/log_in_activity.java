@@ -22,7 +22,7 @@ public class log_in_activity extends AppCompatActivity {
     Button log_in;
     TextView sign_up,forgot;
     EditText email3 , pass3;
-    FirebaseAuth loginAuth;
+    FirebaseAuth myAppAuth;
 
 
     @Override
@@ -34,7 +34,7 @@ public class log_in_activity extends AppCompatActivity {
         email3=findViewById(R.id.email);
         pass3=findViewById(R.id.pass);
         forgot=findViewById(R.id.forgotpass);
-        loginAuth= FirebaseAuth.getInstance();
+        myAppAuth= FirebaseAuth.getInstance();
 
 
 
@@ -77,7 +77,7 @@ public class log_in_activity extends AppCompatActivity {
     }
 
     private void loginUser(final String emailText, final String passwordd) {
-        loginAuth.signInWithEmailAndPassword(emailText,passwordd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        myAppAuth.signInWithEmailAndPassword(emailText,passwordd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){

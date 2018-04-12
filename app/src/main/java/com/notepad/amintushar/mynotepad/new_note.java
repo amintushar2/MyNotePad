@@ -32,7 +32,7 @@ public class new_note extends AppCompatActivity {
 
    Toolbar newnotetoolber;
    DatabaseReference newnoteDatabase;
-   FirebaseAuth noteappAuth;
+   FirebaseAuth myAppAuth;
 
 
 
@@ -46,8 +46,8 @@ public class new_note extends AppCompatActivity {
         etTitle =  findViewById(R.id.new_note_title);
         etContent =  findViewById(R.id.new_note_content);
         setSupportActionBar(newnotetoolber);
-        noteappAuth=FirebaseAuth.getInstance();
-     newnoteDatabase=FirebaseDatabase.getInstance().getReference().child("Notes").child(noteappAuth.getCurrentUser().getUid());
+        myAppAuth=FirebaseAuth.getInstance();
+     newnoteDatabase=FirebaseDatabase.getInstance().getReference().child("Notes").child(myAppAuth.getCurrentUser().getUid());
 
 //    btnsave.setOnClickListener(new View.OnClickListener() {
 //    @Override
@@ -128,12 +128,12 @@ public class new_note extends AppCompatActivity {
 
     private void creatNote(String title, String content) {
 
-        if (noteappAuth.getCurrentUser()!=null){
+        if (myAppAuth.getCurrentUser()!=null){
             final DatabaseReference noteref = newnoteDatabase.push();
             final Map noteMap = new HashMap();
             noteMap.put("title",title);
-            noteMap.put("conten",content);
-            noteMap.put("timetamp",ServerValue.TIMESTAMP);
+            noteMap.put("content",content);
+            noteMap.put("timeTamp",ServerValue.TIMESTAMP);
             Thread newthread= new Thread(new Runnable() {
 
                 @Override
