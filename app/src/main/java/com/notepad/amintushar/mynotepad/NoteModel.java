@@ -1,12 +1,14 @@
-package com.notepad.amintushar.mynotepad.Model_ViewHolder;
+package com.notepad.amintushar.mynotepad;
 
 public class NoteModel {
-    public  String noteTitele;
-    public  String noteTime;
 
     public NoteModel(){
 
     }
+    public  String noteTitele;
+    public  String noteTime;
+
+
     public NoteModel(String noteTitele, String noteTime) {
         this.noteTitele = noteTitele;
         this.noteTime = noteTime;

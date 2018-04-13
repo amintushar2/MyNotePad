@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
+    android:background="@mipmap/bg"
     tools:context=".user_activity.log_in_activity">
 
 
@@ -12,9 +13,9 @@
         android:id="@+id/imageView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="402dp"
+        android:layout_marginBottom="47dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/pass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,50 +25,62 @@
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="100dp"
-        android:drawableLeft="@drawable/ic_email"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="128dp"
+        android:background="@mipmap/email"
         android:drawablePadding="10dp"
-        android:ems="10"
         android:hint="Email Adress"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/pass"
+        android:paddingLeft="70dp"
+        android:textColor="#ffffff"
+        android:textColorHint="#b6b4b4"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977"
+        app:layout_constraintVertical_bias="0.051"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <EditText
         android:id="@+id/pass"
         android:layout_width="wrap_content"
-        android:layout_height="44dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:drawableLeft="@drawable/ic_password"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="144dp"
+        android:background="@mipmap/password"
         android:drawablePadding="10dp"
-        android:ems="10"
         android:hint="Password"
-        android:inputType="textVisiblePassword"
-        app:layout_constraintBottom_toTopOf="@+id/login1"
+        android:inputType="numberPassword"
+        android:paddingLeft="70dp"
+        android:textColor="#ffffff"
+        android:textColorHint="#b6b4b4"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.216"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
         android:id="@+id/login1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
         android:gravity="center"
+        android:background="@drawable/log_in"
         android:text="Login"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/forgotpass"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.579" />
 
     <TextView
         android:id="@+id/text1"
@@ -79,7 +92,7 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="8dp"
         android:text="@string/new_here"
-        android:textColor="@color/black"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sigup1"
         app:layout_constraintHorizontal_bias="0.0"
@@ -94,7 +107,7 @@
         android:layout_margin="70dp"
         android:layout_marginEnd="68dp"
         android:text="@string/signup_now"
-        android:textColor="@color/black"
+        android:textColor="#ffffff"
         app:layout_constraintBaseline_toBaselineOf="@+id/text1"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -107,19 +120,34 @@
         android:layout_marginStart="8dp"
         android:gravity="center"
         android:text="Forgot Password ?"
-        android:textColor="@color/black"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintGuide_begin="53dp"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--<ProgressBar-->
+        <!--android:id="@+id/progressBar2"-->
+        <!--style="?android:attr/progressBarStyle"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintVertical_bias="0.956" />-->
+
+    <!--<android.support.constraint.Guideline-->
+        <!--android:id="@+id/guideline"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/imageView2"-->
+        <!--app:layout_constraintGuide_begin="53dp"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
 
 </android.support.constraint.ConstraintLayout>

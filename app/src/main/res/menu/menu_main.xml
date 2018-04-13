@@ -3,8 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/button_create1"
-        android:icon="@drawable/ic_note_add_white"
+        android:id="@+id/button_create2"
+        android:checked="true"
+
+        android:icon="@drawable/sabe2"
         android:title="New note"
         app:showAsAction="always" />
 

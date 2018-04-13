@@ -112,7 +112,7 @@ public class new_note extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
         switch (item.getItemId()) {
-            case R.id.button_create1:
+            case R.id.button_create2:
                 String title = etTitle.getText().toString().trim();
                 String content = etContent.getText().toString().trim();
                 if (!TextUtils.isEmpty(title)&&!TextUtils.isEmpty(content)){
@@ -135,15 +135,11 @@ public class new_note extends AppCompatActivity {
             noteMap.put("content",content);
             noteMap.put("timeTamp",ServerValue.TIMESTAMP);
             Thread newthread= new Thread(new Runnable() {
-
                 @Override
                 public void run() {
-                    noteref.setValue(noteMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    noteref.setValue(noteMap).addOnCompleteListener(new OnCompleteListener<Void>(){
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-
-
-
                             if (task.isSuccessful()){
                                 Toast.makeText(new_note.this, "Save Data", Toast.LENGTH_SHORT).show();
                             }else{
