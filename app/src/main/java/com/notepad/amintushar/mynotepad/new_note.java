@@ -9,7 +9,6 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -20,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
-import com.notepad.amintushar.mynotepad.user_activity.log_in_activity;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -151,7 +150,7 @@ public class new_note extends AppCompatActivity {
             });
 
             newthread.start();
-            Intent startIntent = new Intent(new_note.this, MainActivity.class);
+            Intent startIntent = new Intent(new_note.this, Navigation.class);
             startActivity(startIntent);
 
         }else{

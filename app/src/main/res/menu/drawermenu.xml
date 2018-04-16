@@ -2,21 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <item android:id="@+id/db"
-        android:title="DashBoard"
-        android:icon="@drawable/ic_idb"
-        />
-<item android:id="@+id/name"
-        android:title="Name"
-        android:icon="@drawable/ic_name"
-        />
-<item android:id="@+id/acitivities"
-        android:title="Activity"
-        android:icon="@drawable/ic_activity"
-        />
+
 <item android:id="@+id/logoutm"
         android:title="logout"
         android:icon="@drawable/ic_log"
+        />
+
+    <item android:id="@+id/db"
+        android:title="About US"
+        android:icon="@drawable/ic_idb"
+        />
+    <item android:id="@+id/cntus"
+        android:title="Contact US"
+        android:icon="@drawable/ic_name"
         />
 
 

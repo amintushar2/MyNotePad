@@ -10,8 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.">
         <activity
-            android:name=".MainActivity"
+            android:name=".Navigation"
             android:label="My NotePad"
+            android:theme="@style/AppTheme."
             android:visibleToInstantApps="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +23,14 @@
         <activity android:name=".user_activity.log_in_activity" />
         <activity android:name=".user_activity.sign_up_activity" />
         <activity android:name=".user_activity.forgotpass_activity" />
+        <activity android:name=".new_note" />
         <activity
-            android:name=".new_note"
-             />
+            android:name=".user_activity.MainActivity"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/AppTheme." />
+        <activity android:name=".user_activity.header" />
+        <activity android:name=".About_Me" />
+        <activity android:name=".Contact_us"></activity>
     </application>
 
 </manifest>

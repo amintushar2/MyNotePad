@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -17,11 +19,12 @@ import java.util.ArrayList;
 import java.util.Map;
 
 class Notes {
-    String title,timeTamp;
+    String title,timeTamp,content;
 
-    public Notes(String title, String timeTamp) {
+    public Notes(String title, String timeTamp,String content) {
         this.title = title;
         this.timeTamp = timeTamp;
+        this.content = content;
     }
 }
 
@@ -32,6 +35,8 @@ public class NoteAdapter extends BaseAdapter {
     Context context;
     int resource;
     ChildEventListener cListener =new ChildEventListener() {
+
+
         @Override
         public void onChildAdded(DataSnapshot dataSnapshot, String s) {
             snapshots.add(dataSnapshot);
@@ -68,6 +73,8 @@ public class NoteAdapter extends BaseAdapter {
         this.ref.addChildEventListener(cListener);
     }
 
+
+
     @Override
     public int getCount() {
         return snapshots.size();
@@ -86,13 +93,17 @@ public class NoteAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View row = inflater.inflate(resource, parent,false);
+        final View row = inflater.inflate(resource, parent,false);
         TextView title1 = row.findViewById(R.id.note_title);
         TextView timeTamp  = row.findViewById(R.id.note_time);
-
+        TextView content = row.findViewById( R.id.note_content);
         Map note = (Map) getItem(position).getValue();
         title1.setText(note.get("title").toString());
         timeTamp.setText(note.get("timeTamp").toString());
+        content.setText(note.get("content").toString());
+
+
         return row;
     }
+
 }

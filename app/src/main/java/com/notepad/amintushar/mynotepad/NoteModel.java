@@ -6,12 +6,22 @@ public class NoteModel {
 
     }
     public  String noteTitele;
+    public  String noteContent;
     public  String noteTime;
 
 
-    public NoteModel(String noteTitele, String noteTime) {
+    public String getNoteContent() {
+        return noteContent;
+    }
+
+    public void setNoteContent(String noteContent) {
+        this.noteContent = noteContent;
+    }
+
+    public NoteModel(String noteTitele, String noteTime, String noteContent) {
         this.noteTitele = noteTitele;
         this.noteTime = noteTime;
+        this.noteContent = noteContent;
     }
 
     public String getNoteTitele() {

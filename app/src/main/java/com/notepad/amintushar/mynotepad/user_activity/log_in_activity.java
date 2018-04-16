@@ -14,7 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.notepad.amintushar.mynotepad.MainActivity;
+import com.notepad.amintushar.mynotepad.Navigation;
 import com.notepad.amintushar.mynotepad.R;
 
 public class log_in_activity extends AppCompatActivity {
@@ -83,7 +83,7 @@ public class log_in_activity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Toast.makeText(log_in_activity.this, "Log In SuccesFully", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(log_in_activity.this, MainActivity.class);
+                    Intent intent = new Intent(log_in_activity.this, Navigation.class);
                     intent.putExtra("email",email3.getText().toString());
                     startActivity(intent);
                     finish();
