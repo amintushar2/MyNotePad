@@ -41,7 +41,7 @@ public class new_note extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_note);
         newnotetoolber = findViewById(R.id.newtoobler);
-        btnsave = findViewById(R.id.about);
+      //  btnsave = findViewById(R.id.about);
         etTitle =  findViewById(R.id.new_note_title);
         etContent =  findViewById(R.id.new_note_content);
         setSupportActionBar(newnotetoolber);

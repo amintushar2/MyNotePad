@@ -172,10 +172,7 @@ public class Navigation extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-//                if (loginAuth.getCurrentUser() == null || fnoteDatabase == null)
-//                    return;
-//
-//                fnoteDatabase.child(null);
+
 //                Query query =fnoteDatabase.child("title");
 //                query.addListenerForSingleValueEvent(new ValueEventListener() {
 //                    @Override
@@ -208,40 +205,45 @@ public class Navigation extends AppCompatActivity
 //                return false;
 //            }
 //        });
-//        gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-//            @Override
-//            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, final long id) {
-//                fnoteDatabase= FirebaseDatabase.getInstance().getReference(loginAuth.getUid());
-//
-//                AlertDialog.Builder altdial = new AlertDialog.Builder(Navigation.this);
-//                altdial.setMessage("Do you want to Quit this app ???")
-//                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialog, int which) {
-//
-//
-//                                fnoteDatabase.child("Child").getKey().removeValue();
-//
-//                            }
-//                        })
-//                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialog, int which) {
-//                                dialog.cancel();
-//                            }
-//                        });
-//
-//                AlertDialog alert = altdial.create();
-//
-//                alert.show();
-//
-//
-//
-//
-//
-//                return false;
-//            }
-//        });
+        gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, final long id) {
+             //   fnoteDatabase= FirebaseDatabase.getInstance().getReference(loginAuth.getUid());
+
+                AlertDialog.Builder altdial = new AlertDialog.Builder(Navigation.this);
+                altdial.setMessage("Do you want to Delete ???")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                if (loginAuth.getCurrentUser() == null || fnoteDatabase == null)
+                                    return;
+
+                                fnoteDatabase.removeValue(null);
+                                updateUI();
+
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alert = altdial.create();
+
+                alert.show();
+
+
+
+
+
+                return false;
+
+
+            }
+        });
 
 
 

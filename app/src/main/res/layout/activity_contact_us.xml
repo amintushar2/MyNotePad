@@ -14,7 +14,7 @@
         app:layout_constraintBottom_toTopOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_fb"
+        android:background="@drawable/ic_fb"
         tools:ignore="VectorDrawableCompat" />
 
     <ImageButton
@@ -25,7 +25,7 @@
         app:layout_constraintBottom_toTopOf="@+id/imageView9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_yyyyy"
+        android:background="@drawable/ic_yyyyy"
         tools:ignore="VectorDrawableCompat" />
 
     <ImageButton
@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_002_linkedin"
+        android:background="@drawable/ic_002_linkedin"
         tools:ignore="VectorDrawableCompat" />
 
     <TextView
