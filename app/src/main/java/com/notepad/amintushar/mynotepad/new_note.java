@@ -26,7 +26,7 @@ import java.util.Map;
 
 public class new_note extends AppCompatActivity {
 
-    Button btnsave;
+
     EditText etTitle, etContent;
 
    Toolbar newnotetoolber;
@@ -119,7 +119,7 @@ public class new_note extends AppCompatActivity {
 
                 }else{
                     Toast.makeText(new_note.this, "Fill Empty", Toast.LENGTH_SHORT).show();
-                    //Snackbar
+
                 }
         }
         return true;

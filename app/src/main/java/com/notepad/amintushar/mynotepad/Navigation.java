@@ -72,6 +72,10 @@ public class Navigation extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+
+
+
+
 //navigationDrawer
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -83,14 +87,21 @@ public class Navigation extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-//loginChwck
+
+
+
+
+
+
+
+//loginCheck
         loginAuth = FirebaseAuth.getInstance();
 
         if (loginAuth.getCurrentUser()!=null){
             fnoteDatabase= FirebaseDatabase.getInstance().getReference().child("Notes").child(loginAuth.getCurrentUser().getUid());
         }
-
-        updateUI();
+//
+       updateUI();
 
     }
 
@@ -155,60 +166,29 @@ public class Navigation extends AppCompatActivity
     }
 
 
+
+
     private void updateUI(){
 
         if (loginAuth.getCurrentUser() != null){
             Log.i("MainActivity", "loginAuth != null");
-        } else {
-            Intent startIntent = new Intent(Navigation.this, log_in_activity.class);
-            startActivity(startIntent);
-            finish();
-            Log.i("MainActivity", "loginAuth == null");
         }
+//        else {
+//            Intent startIntent = new Intent(Navigation.this, log_in_activity.class);
+//            startActivity(startIntent);
+//            finish();
+//            Log.i("MainActivity", "loginAuth == null");
+//        }
+
+      //  fnoteDatabase= FirebaseDatabase.getInstance().getReference(loginAuth.getUid());
         NoteAdapter adapter = new NoteAdapter(this,R.layout.single_row,fnoteDatabase, loginAuth);
         gridView.setAdapter(adapter);
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
-//                Query query =fnoteDatabase.child("title");
-//                query.addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(DataSnapshot dataSnapshot) {
-//                        fnoteDatabase.child("k").getRef().removeValue();
-//
-//
-//
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(DatabaseError databaseError) {
-//
-//                    }
-//                });
-
-
-//                Intent intent = new Intent(Navigation.this,new_note.class);
-//                startActivity(intent);
-//                intent.putExtra("title",String.valueOf(id));
-//                intent.putExtra("content",String.valueOf(id));
-//                updateUI();
-            }
-        });
-//        gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-//            @Override
-//            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//                fnoteDatabase.child()
-//                return false;
-//            }
-//        });
         gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, final long id) {
-             //   fnoteDatabase= FirebaseDatabase.getInstance().getReference(loginAuth.getUid());
+
 
                 AlertDialog.Builder altdial = new AlertDialog.Builder(Navigation.this);
                 altdial.setMessage("Do you want to Delete ???")
@@ -244,7 +224,6 @@ public class Navigation extends AppCompatActivity
 
             }
         });
-
 
 
     }
